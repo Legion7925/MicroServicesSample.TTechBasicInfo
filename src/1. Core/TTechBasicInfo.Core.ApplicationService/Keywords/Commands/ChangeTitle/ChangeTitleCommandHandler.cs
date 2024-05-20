@@ -22,7 +22,7 @@ public class ChangeTitleCommandHandler : CommandHandler<ChangeTitleCommand>
 
         if(keyword == null)
         {
-            AddMessage("Object Not Found" , nameof(keyword));
+            AddMessage("ObjectNotFound" , nameof(keyword));
             return Result(ApplicationServiceStatus.NotFound);
         }
 

@@ -2,7 +2,7 @@
 
 namespace TTechBasicInfo.Core.Contracts.Keywords.Commands.DiactivatedKeywords;
 
-internal class DiactivateKeywordCommand : ICommand
+public class DeactivateKeywordCommand : ICommand
 {
     public int Id { get; set; }
 }

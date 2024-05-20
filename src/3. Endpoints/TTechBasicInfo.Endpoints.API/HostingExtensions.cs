@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Serilog;
 using TTechBasicInfo.Infrastructure.Data.Sql.Commands.Common;
+using TTechBasicInfo.Infrastructure.Data.Sql.Queries.Common;
 using Zamin.Extensions.DependencyInjection;
 using Zamin.Infra.Data.Sql.Commands.Interceptors;
 
@@ -35,6 +36,8 @@ public static class HostingExtensions
         builder.Services.AddZaminInMemoryCaching();
 
         builder.Services.AddDbContext<TTechBasicInfoCommandDbContext>(c => c.UseSqlServer(cnn).AddInterceptors(new SetPersianYeKeInterceptor(), new AddAuditDataInterceptor()));
+
+        builder.Services.AddDbContext<TTechBasicInfoQueryDbContext>(c => c.UseSqlServer(cnn));
 
         builder.Services.AddZaminApiCore("Zamin", "BasicInfo");
 
