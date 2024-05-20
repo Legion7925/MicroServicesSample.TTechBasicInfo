@@ -25,7 +25,7 @@ public class KeywordQueryRepository : BaseQueryRepository<TTechBasicInfoQueryDbC
 
         if(!string.IsNullOrEmpty(titleAndStatusQuery.Title))
         {
-            query.Where(c=> c.Title.StartsWith(titleAndStatusQuery.Title)); 
+           query =  query.Where(c=> c.Title.StartsWith(titleAndStatusQuery.Title)); 
         }
 
         result.QueryResult = query.OrderBy(c => c.Title)
