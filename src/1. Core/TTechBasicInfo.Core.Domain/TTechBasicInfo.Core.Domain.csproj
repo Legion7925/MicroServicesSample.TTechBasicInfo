@@ -11,4 +11,8 @@
     <PackageReference Include="Zamin.Core.Domain.Toolkits" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Categories\ValueObjects\" />
+  </ItemGroup>
+
 </Project>

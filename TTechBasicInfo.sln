@@ -13,25 +13,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Infrastructure", "2. Inf
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Endpoints", "3. Endpoints", "{A891E076-906E-4CCB-97EB-13CEB46E3804}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTechBasicInfo.Core.Domain", "src\1. Core\TTechBasicInfo.Core.Domain\TTechBasicInfo.Core.Domain.csproj", "{8623FC3F-F6FA-41C5-A18F-27979FC40C1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TTechBasicInfo.Core.Domain", "src\1. Core\TTechBasicInfo.Core.Domain\TTechBasicInfo.Core.Domain.csproj", "{8623FC3F-F6FA-41C5-A18F-27979FC40C1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTechBasicInfo.Core.ApplicationService", "src\1. Core\TTechBasicInfo.Core.ApplicationService\TTechBasicInfo.Core.ApplicationService.csproj", "{26BE154A-4236-4EC0-A109-7F2FB6214BB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TTechBasicInfo.Core.ApplicationService", "src\1. Core\TTechBasicInfo.Core.ApplicationService\TTechBasicInfo.Core.ApplicationService.csproj", "{26BE154A-4236-4EC0-A109-7F2FB6214BB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTechBasicInfo.Core.Contracts", "src\1. Core\TTechBasicInfo.Core.Contracts\TTechBasicInfo.Core.Contracts.csproj", "{36EFE2E0-D394-4C49-8315-A557E1F95BD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TTechBasicInfo.Core.Contracts", "src\1. Core\TTechBasicInfo.Core.Contracts\TTechBasicInfo.Core.Contracts.csproj", "{36EFE2E0-D394-4C49-8315-A557E1F95BD5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{DF7834F4-0589-4E25-AA9A-B57B4721B4C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTechBasicInfo.Infrastructure.Data.Sql.Queries", "src\2. Infrastructure\Data\TTechBasicInfo.Infrastructure.Data.Sql.Queries\TTechBasicInfo.Infrastructure.Data.Sql.Queries.csproj", "{98018210-0861-4F82-9130-14BF761CA79B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TTechBasicInfo.Infrastructure.Data.Sql.Queries", "src\2. Infrastructure\Data\TTechBasicInfo.Infrastructure.Data.Sql.Queries\TTechBasicInfo.Infrastructure.Data.Sql.Queries.csproj", "{98018210-0861-4F82-9130-14BF761CA79B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTechBasicInfo.Infrastructure.Data.Sql.Commands", "src\2. Infrastructure\Data\TTechBasicInfo.Infrastructure.Data.Sql.Commands\TTechBasicInfo.Infrastructure.Data.Sql.Commands.csproj", "{F771461F-3435-4493-B0F2-AAAB75410377}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TTechBasicInfo.Infrastructure.Data.Sql.Commands", "src\2. Infrastructure\Data\TTechBasicInfo.Infrastructure.Data.Sql.Commands\TTechBasicInfo.Infrastructure.Data.Sql.Commands.csproj", "{F771461F-3435-4493-B0F2-AAAB75410377}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTechBasicInfo.Endpoints.API", "src\3. Endpoints\TTechBasicInfo.Endpoints.API\TTechBasicInfo.Endpoints.API.csproj", "{B95D40AE-81D3-4991-A7C6-8A6AAE22BEA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TTechBasicInfo.Endpoints.API", "src\3. Endpoints\TTechBasicInfo.Endpoints.API\TTechBasicInfo.Endpoints.API.csproj", "{B95D40AE-81D3-4991-A7C6-8A6AAE22BEA2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Core", "1. Core", "{DB87AEBB-A966-451C-A5C6-61A46B33C930}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Infrastructure", "2. Infrastructure", "{CCBFE6C7-804D-4D69-B7E8-F15B6A8FE1F7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Endpoint", "3. Endpoint", "{564DF939-EEBF-4CD3-AF79-A1CD1EAA3D21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTechBasicInfo.Core.Domain.Test", "test\1. Core\TTechBasicInfo.Core.Domain.Test\TTechBasicInfo.Core.Domain.Test.csproj", "{E33F2680-EEC2-477F-99EA-D7835EF03DAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{B95D40AE-81D3-4991-A7C6-8A6AAE22BEA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B95D40AE-81D3-4991-A7C6-8A6AAE22BEA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B95D40AE-81D3-4991-A7C6-8A6AAE22BEA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E33F2680-EEC2-477F-99EA-D7835EF03DAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E33F2680-EEC2-477F-99EA-D7835EF03DAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E33F2680-EEC2-477F-99EA-D7835EF03DAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E33F2680-EEC2-477F-99EA-D7835EF03DAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +87,7 @@ Global
 		{DB87AEBB-A966-451C-A5C6-61A46B33C930} = {4901C1B5-6838-402A-A624-375C0AF8E613}
 		{CCBFE6C7-804D-4D69-B7E8-F15B6A8FE1F7} = {4901C1B5-6838-402A-A624-375C0AF8E613}
 		{564DF939-EEBF-4CD3-AF79-A1CD1EAA3D21} = {4901C1B5-6838-402A-A624-375C0AF8E613}
+		{E33F2680-EEC2-477F-99EA-D7835EF03DAB} = {DB87AEBB-A966-451C-A5C6-61A46B33C930}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {660CA9E4-71C2-45CF-A927-FC90CF9922DB}
