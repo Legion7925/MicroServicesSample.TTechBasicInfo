@@ -1,4 +1,5 @@
-﻿using TTechBasicInfo.Core.Domain.Categories.ValueObjects;
+﻿using TTechBasicInfo.Core.Domain.Categories.Events;
+using TTechBasicInfo.Core.Domain.Categories.ValueObjects;
 using Zamin.Core.Domain.Entities;
 using Zamin.Core.Domain.Exceptions;
 
@@ -10,6 +11,7 @@ public class Category : AggregateRoot
     {
         Title = title;
         Name = name;
+        AddEvent(new CategoryCreatedEvent(BusinessId.Value, Title.Value, Name.Value));
     }
 
     public CategoryTitle Title { get; private set; }

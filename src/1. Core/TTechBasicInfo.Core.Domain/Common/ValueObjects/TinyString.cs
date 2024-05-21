@@ -6,12 +6,10 @@ namespace TTechBasicInfo.Core.Domain.Common.ValueObjects;
 
 public class TinyString : BaseValueObject<TinyString>
 {
-    #region Properties
     public string Value { get; private set; }
-    #endregion
 
-    #region Constructors and Factories
     public static TinyString FromString(string value) => new TinyString(value);
+
     public TinyString(string value)
     {
         if (string.IsNullOrWhiteSpace(value))
@@ -24,27 +22,16 @@ public class TinyString : BaseValueObject<TinyString>
         }
         Value = value;
     }
-    private TinyString()
-    {
 
-    }
-    #endregion
+    private TinyString() { }
 
-
-    #region Equality Check
     protected override IEnumerable<object> GetEqualityComponents()
     {
         yield return Value;
     }
-    #endregion
 
-    #region Operator Overloading
     public static explicit operator string(TinyString title) => title.Value;
-    public static implicit operator TinyString(string value) => new(value);
-    #endregion
+    public static implicit operator TinyString(string value) => new TinyString(value);
 
-    #region Methods
     public override string ToString() => Value;
-
-    #endregion
 }
