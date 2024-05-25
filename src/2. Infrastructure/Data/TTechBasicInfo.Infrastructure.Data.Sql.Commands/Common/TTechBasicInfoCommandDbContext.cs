@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TTechBasicInfo.Core.Domain.Categories.Entities;
+using TTechBasicInfo.Core.Domain.Categories.ValueObjects;
 using TTechBasicInfo.Core.Domain.Common.ValueObjects;
 using TTechBasicInfo.Core.Domain.Keywords.Entities;
+using TTechBasicInfo.Infrastructure.Data.Sql.Commands.Categories;
 using Zamin.Core.Domain.Toolkits.ValueObjects;
 using Zamin.Core.Domain.ValueObjects;
 using Zamin.Infra.Data.Sql.Commands;
@@ -32,5 +34,7 @@ public class TTechBasicInfoCommandDbContext : BaseCommandDbContext
         configurationBuilder.Properties<Title>().HaveConversion<TitleConversion>();
         configurationBuilder.Properties<Description>().HaveConversion<DescriptionConversion>();
         configurationBuilder.Properties<TinyString>().HaveConversion<TinyStringValueConversion>();
+        configurationBuilder.Properties<CategoryName>().HaveConversion<CategoryNameValueConversion>();
+        configurationBuilder.Properties<CategoryTitle>().HaveConversion<CategoryTitleValueConversion>();
     }
 }

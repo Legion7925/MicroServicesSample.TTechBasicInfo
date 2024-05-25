@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TTechBasicInfo.Infrastructure.Data.Sql.Commands.Common;
 
@@ -11,9 +12,11 @@ using TTechBasicInfo.Infrastructure.Data.Sql.Commands.Common;
 namespace TTechBasicInfo.Infrastructure.Data.Sql.Commands.Migrations
 {
     [DbContext(typeof(TTechBasicInfoCommandDbContext))]
-    partial class TTechBasicInfoCommandDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240525161006_add-category")]
+    partial class addcategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
