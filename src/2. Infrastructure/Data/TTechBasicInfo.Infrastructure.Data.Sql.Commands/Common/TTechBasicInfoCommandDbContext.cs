@@ -6,12 +6,13 @@ using TTechBasicInfo.Core.Domain.Keywords.Entities;
 using TTechBasicInfo.Infrastructure.Data.Sql.Commands.Categories;
 using Zamin.Core.Domain.Toolkits.ValueObjects;
 using Zamin.Core.Domain.ValueObjects;
+using Zamin.Extensions.Events.Outbox.Dal.EF;
 using Zamin.Infra.Data.Sql.Commands;
 using Zamin.Infra.Data.Sql.Commands.ValueConversions;
 
 namespace TTechBasicInfo.Infrastructure.Data.Sql.Commands.Common;
 
-public class TTechBasicInfoCommandDbContext : BaseCommandDbContext
+public class TTechBasicInfoCommandDbContext : BaseOutboxCommandDbContext
 {
     public DbSet<Keyword> Keywords { get; set; }
     public DbSet<Category> Categories { get; set; }

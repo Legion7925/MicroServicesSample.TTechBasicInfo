@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Serilog;
 using Steeltoe.Discovery.Client;
+using TTechBasicInfo.Endpoints.API.BackgroundTasks;
 using TTechBasicInfo.Infrastructure.Data.Sql.Commands.Common;
 using TTechBasicInfo.Infrastructure.Data.Sql.Queries.Common;
 using Zamin.Extensions.DependencyInjection;
@@ -44,7 +45,7 @@ public static class HostingExtensions
         builder.Services.AddZaminApiCore("Zamin", "BasicInfo");
 
         builder.Services.AddEndpointsApiExplorer();
-
+        builder.Services.AddHostedService<EventPublisher>();
         builder.Services.AddSwaggerGen();
         return builder.Build();
     }
