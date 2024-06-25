@@ -1,6 +1,9 @@
 using Serilog;
+using Serilog.Sinks.Elasticsearch;
+using System.Diagnostics;
 using TTechBasicInfo.Endpoints.API;
 
+var activity = Activity.DefaultIdFormat;
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
     .CreateBootstrapLogger();
@@ -12,6 +15,14 @@ try
 
     builder.Host.UseSerilog((ctx, lc) => lc
     .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}")
+    .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri("http://localhost:9200"))
+    {
+        DetectElasticsearchVersion = false,
+        AutoRegisterTemplate = true,
+        AutoRegisterTemplateVersion = AutoRegisterTemplateVersion.ESv6,
+        IndexFormat = "ttech-basicinfo-index-{0:yyyy.MM}",
+        MinimumLogEventLevel = Serilog.Events.LogEventLevel.Debug
+    })
     .Enrich.FromLogContext()
     .ReadFrom.Configuration(ctx.Configuration));
 

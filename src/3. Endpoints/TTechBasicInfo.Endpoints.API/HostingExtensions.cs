@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
 using Steeltoe.Discovery.Client;
 using TTechBasicInfo.Endpoints.API.BackgroundTasks;
@@ -47,6 +48,7 @@ public static class HostingExtensions
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddHostedService<EventPublisher>();
         builder.Services.AddSwaggerGen();
+        builder.Services.AddHealthChecks().AddDbContextCheck<TTechBasicInfoCommandDbContext>();
         return builder.Build();
     }
 
@@ -63,8 +65,14 @@ public static class HostingExtensions
 
         //app.UseHttpsRedirection();
 
-        app.UseAuthorization();
+        app.UseRouting();
 
+        app.UseAuthorization();
+        app.MapHealthChecks("/health/live" ,new HealthCheckOptions
+        {
+            Predicate = _ => false
+        });
+        app.MapHealthChecks("/health/ready");
         app.MapControllers();
 
 
