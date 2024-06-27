@@ -25,6 +25,24 @@ public static class HostingExtensions
             c.ReloadDataIntervalInMinuts = 1;
         });
 
+        builder.Services.AddAuthentication("Bearer").AddJwtBearer("Bearer", c=>
+        {
+            c.Authority = "https://localhost:5001/";
+            c.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+            {
+                ValidateAudience = false,
+            };
+        });
+
+        builder.Services.AddAuthorization(c=>
+        {
+            c.AddPolicy("BasicInfoPolicy", p =>
+            {
+                p.RequireAuthenticatedUser();
+                p.RequireClaim("scope" , "basicinfo");
+            });
+        });
+
         builder.Services.AddZaminWebUserInfoService(c =>
         {
             c.DefaultUserId = "1";
@@ -67,13 +85,15 @@ public static class HostingExtensions
 
         app.UseRouting();
 
+        app.UseAuthentication();
         app.UseAuthorization();
+
         app.MapHealthChecks("/health/live" ,new HealthCheckOptions
         {
             Predicate = _ => false
         });
         app.MapHealthChecks("/health/ready");
-        app.MapControllers();
+        app.MapControllers().RequireAuthorization("BasicInfoPolicy");
 
 
         return app;
